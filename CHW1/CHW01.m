@@ -1,5 +1,5 @@
 
-%% سوال 1.1 بخش 2
+%% Q 1.1 PART2
 
 n = 0:10;
 m = 0:5;
@@ -15,7 +15,7 @@ xlabel('n');
 ylabel('y[n]');
 grid on;
 
-%% سوال 1.1 بخش 3
+%% Q 1.1 PART3
 
 n = 0:10;
 m = 0:5;
@@ -31,7 +31,7 @@ xlabel('n');
 ylabel('y[n]');
 grid on;
 
-%% سوال 1.1 بخش 4
+%% Q 1.1 PART4
 
 n = 0:10;
 m = 0:5;
@@ -47,7 +47,7 @@ xlabel('n');
 ylabel('y[n]');
 grid on;
 
-%% سوال 2.1 بخش 3
+%% Q 2.1 PART3
 
 n = -11 : 0.01 : 11;
 f = 0.*(abs(n)>10) - n.*(abs(n)<=10 & abs(n)>5) + n.*(abs(n)<=5);
@@ -76,7 +76,7 @@ hold on;
 plot(n,filtered_f,"LineWidth",1);
 title('filterd f(x)');
 
-%% سوال 2.1 بخش 4
+%% Q 2.1 PART4
 
 zebra = imread('zebra.jpg');
 
@@ -91,7 +91,7 @@ figure;
 imshow(filtered_zebra)
 title('Filtered Image');
 
-%% سوال 2.1 بخش 6
+%% Q 2.1 PART6
 
 zebra = imread('zebra.jpg');
 
@@ -129,7 +129,7 @@ figure;
 imshow(reconstructed_image);
 title('Reconstructed Image');
 
-%% سوال 1.2 بخش 1
+%% Q 1.2 PART1
 
 syms t
 
@@ -145,7 +145,7 @@ X3 = laplace(x3);
 x4 = (t^2)*sinh(2*t);
 X4 = laplace(x4);
 
-%% سوال 1.2 بخش 2
+%% Q 1.2 PART2
 
 syms s
 
@@ -158,7 +158,7 @@ f2 = ilaplace(F2);
 F3 = 2*s^2/((s^2+1)*(s-1)^2);
 f3 = ilaplace(F3);
 
-%% سوال 2.2 بخش 1
+%% Q 2.2 PART1
 
 H1 = tf(1,[1 125 100 100 20 10]);
 H1_stability = isstable(H1);
@@ -197,7 +197,7 @@ else
     disp("H3 is unstable")
 end
 
-%% سوال 2.2 بخش 2
+%% Q 2.2 PART2
 
 syms s t
 G = (1-s)/((s+1)*(2*s+1));
@@ -218,7 +218,7 @@ y1 = ilaplace(Y1);
 y2 = ilaplace(Y2);
 y3 = ilaplace(Y3); 
 
-%% سوال 3.2 (حل معادله دیفرانسیل)
+%% Q 3.2 (Solving Differential Equation)
 
 syms Y s
 
@@ -227,7 +227,7 @@ equation = s*Y - 3 + 2*Y == 12/(s-3);
 F = solve(equation,Y);
 f = ilaplace(F);
 
-%% سوال 2.3 (تولید موسیقی)
+%% Q 2.3 (Generating Song)
 
 notes = {'G','G','A#','D#','D',...
          'G','G','A#','D','C',...
