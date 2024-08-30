@@ -1,5 +1,5 @@
 
-%% سوال 1
+%% Q1
 
 fprintf("Hello, this is a program for adding three sine waves.\n");
 W = input("Please enter the frequency(W) of the waves: ");
@@ -59,7 +59,7 @@ quiver(real(first_add),imag(first_add),real(phasor3),imag(phasor3),0,"Color","bl
 quiver(0,0,real(second_add),imag(second_add),0,"Color","green","LineWidth",2);
 
 
-%% سوال 2 بخش 1
+%% Q2 PART1
 [sound, ~] = audioread("Music.wav");
 Fs = 48000;
 first_channel = sound(:,1);
@@ -72,7 +72,7 @@ plot(sound);
 title("Audio Signal Containing Two Channels")
 grid on
 
-%% سوال 2 بخش 2
+%% Q2 PART2
 
 a=1;
 b=zeros(1,1+0.2*Fs);
@@ -88,7 +88,7 @@ grid on
 
 soundsc(filtered_audio_1,Fs);
 
-%% سوال 2 بخش 3
+%% Q2 PART3
 
 unfiltered_audio_1 = filter(a,b,filtered_audio_1);
 
@@ -99,7 +99,7 @@ grid on
 
 soundsc(unfiltered_audio_1,Fs);
 
-%% سوال 2 بخش 4
+%% Q2 PART4
 
 a=1;
 b=zeros(1,1+0.3*Fs);
@@ -131,7 +131,7 @@ grid on
 
 soundsc(filtered_audio_2,Fs);
 
-%% سوال 2 بخش 5
+%% Q2 PART5
 
 n1 = randn(1258790,1)./10;
 noisy_audio_guassian = n1 + average_sound;
@@ -153,7 +153,7 @@ grid on
 
 soundsc(noisy_audio_uniform,Fs);
 
-%% سوال 2 بخش 6
+%% Q2 PART6
 
 t = 0:1/Fs:(1258790-1)/Fs;
 w = linspace(1000*2*pi,2000*2*pi,length(t)); 
@@ -169,7 +169,7 @@ grid on
 soundsc(final_wave,Fs);
 audiowrite("MusicWithSin.wav",final_wave,48000);
 
-%% سوال 3 بخش 1
+%% Q3 PART1
 
 image = imread("MyPhoto.jpg");
 
@@ -177,7 +177,7 @@ figure;
 imshow(image);
 title("Arbitrary Image Loaded and Shown In Matlab")
 
-%% سوال 3 بخش 2
+%% Q3 PART2
 
 image_R_channel = image(:,:,1);
 image_G_channel = image(:,:,2);
@@ -224,7 +224,7 @@ subplot(2,2,4);
 imshow(justB);
 title("B Channel in Color Scale")
 
-%% سوال 3 بخش 3
+%% Q3 PART3
 
 average_image = (image_R_channel + image_G_channel + image_B_channel)./3;
 rgb2gray_scale_image = rgb2gray(image);
@@ -244,7 +244,7 @@ imshow(color_channels_sub);
 title("Sub of Color Channels")
 
 
-%% سوال 3 بخش 4
+%% Q3 PART4
 
 city_image = imread("image.png");
 city_image_gray = rgb2gray(city_image);
