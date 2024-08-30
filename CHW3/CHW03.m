@@ -1,7 +1,7 @@
 
-%% سوال 1 بخش 1
+%% Q1 PART1
 
-% بخش الف
+% PART A
 syms t W
 x = @(t) 2*cos(200*pi*t) + 3*sin(400*pi*t);
 figure;
@@ -12,7 +12,7 @@ xlabel('Time (t)');
 ylabel('x(t)');
 title('Continuous Time Signal');
 
-% بخش ب
+% PART B
 Ts = 0.001;
 n = 0/Ts:1:0.02/Ts;
 sampled_x = x(n*Ts);
@@ -23,7 +23,7 @@ xlabel('Sample (n)');
 ylabel('x[n]');
 title('Discrete Time Sampled Signal');
 
-% بخش ج
+% PART C
 Xf = fourier(x,t,W);
 
 X_jw = @(W) 0;
@@ -38,7 +38,7 @@ xlabel('Frequency (Hz)');
 ylabel('Magnitude');
 title('Frequency Spectrum of x[n]');
 
-%% سوال 1 بخش 2
+%% Q1 PART2
 
 M = 2;
 new_n = 0/(Ts*M):1:0.02/(Ts*M);
@@ -59,7 +59,7 @@ ylabel('xd[n]');
 ylim([-5 5])
 title('Discrete Time Sampled Signal with M=2');
 
-%% سوال 1 بخش 3
+%% Q1 PART3
 
 syms s
 fs = 1000; % sampling frequency
@@ -83,7 +83,7 @@ freqz(b,a,[],fs);
 subplot(2,1,1)
 ylim([-100 20])
 
-%% سوال 2 بخش الف
+%% Q2 PART A
 
 image = imread("my_image.jpg");
 my_image = im2gray(image);
@@ -111,7 +111,7 @@ figure;
 imshow(my_image_speckle);
 title("Image with Speckle Noise");
 
-%% سوال 2 بخش ج
+%% Q2 PART C
 
 filtered_1_median = median_filter(my_image_salt_and_pepper,3);
 filtered_1_gaussian = gaussian_filter(my_image_salt_and_pepper,7,1.11);
@@ -157,7 +157,7 @@ imshow(filtered_4_gaussian);
 title("The Noisy Picture with Speckle Noise, " + ...
     "Filtered Using Gaussian Filter with K=7 and Std=1.11")
 
-%% سوال 2 بخش ج امتیازی
+%% Q2 PART C ADDITIONAL
 
 filtered_1_wiener = wiener2(my_image_salt_and_pepper,[5 5]);
 figure;
@@ -179,12 +179,12 @@ figure;
 imshow(filtered_4_wiener);
 title('The Noisy Picture with Speckle Noise, Filtered with Wiener Filter')
 
-%% سوال 3
+%% Q3
 
 [my_symbol,my_sample] = generate_sample_and_symbol(350,40);
 my_filtered_signal = apply_matched_filter(my_symbol,my_sample);
 
-%% سوال 4
+%% Q4
 
 pic1 = imread("pic1.png");
 pic2 = imread("pic2.png");
